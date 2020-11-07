@@ -6,16 +6,24 @@
 //
 
 import UIKit
+import Parse
 
 class LoginParentViewController: UIViewController {
 
+    @IBOutlet weak var usernameParentField: UITextField!
+    
+    @IBOutlet weak var passwordParentField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onParentSignIn(_ sender: Any) {
+    }
+    
+    @IBAction func onParentSignUp(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
