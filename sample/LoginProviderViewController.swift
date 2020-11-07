@@ -18,9 +18,7 @@ class LoginProviderViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func onProviderSignIn(_ sender: Any) {
-    }
-    
+   
     @IBAction func onProviderSignUp(_ sender: Any) {
         var user = PFUser(className: "_User")
                 user.username = usernameProviderField.text
