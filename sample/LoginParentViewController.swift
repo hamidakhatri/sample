@@ -20,9 +20,35 @@ class LoginParentViewController: UIViewController {
     }
     
     @IBAction func onParentSignIn(_ sender: Any) {
+        let username = usernameParentField.text!
+        let password = passwordParentField.text!
+        
+        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+            if user != nil {
+                self.performSegue(withIdentifier: "loginParentSegue", sender: nil)
+            }
+            else {
+                print ("Error: \(error?.localizedDescription)")
+            }
+        }
+        
     }
     
     @IBAction func onParentSignUp(_ sender: Any) {
+        var user = PFUser(className: "_User")
+        user.username = usernameParentField.text
+        user.password = passwordParentField.text
+        
+        user.signUpInBackground{ (success, error) in
+            if success {
+                self.performSegue(withIdentifier: "loginParentSegue", sender: nil)
+            } else {
+                print ("Error: \(error?.localizedDescription)")
+            }
+        
+
+
+
     }
     /*
     // MARK: - Navigation
@@ -34,4 +60,5 @@ class LoginParentViewController: UIViewController {
     }
     */
 
+}
 }
