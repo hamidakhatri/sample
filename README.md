@@ -1,3 +1,3 @@
 # sample
 
-https://github.com/hamidakhatri/
+[Hamida](https://github.com/hamidakhatri/)
